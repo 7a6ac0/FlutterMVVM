@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/di/service_locator.dart';
-import 'package:flutter_mvvm/ui/home/home_screen.dart';
+import 'package:flutter_mvvm/util/routers.dart';
 
 void main() {
   initServiceLocator();
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      onGenerateRoute: Routers.generateRoute,
     );
   }
 }

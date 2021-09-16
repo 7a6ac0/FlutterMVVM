@@ -1,11 +1,11 @@
 import 'package:flutter_mvvm/data/base/api_client.dart';
-import 'package:flutter_mvvm/data/home/model/product.dart';
+import 'package:flutter_mvvm/data/product/model/product.dart';
 
-abstract class HomeRepository {
+abstract class ProductRepository {
   Future<List<Product>> getProducts();
 }
 
-class DefaultHomeRepository implements HomeRepository {
+class DefaultProductRepository implements ProductRepository {
   @override
   Future<List<Product>> getProducts() {
     return ApiClient().getProducts();

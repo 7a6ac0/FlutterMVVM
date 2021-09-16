@@ -4,7 +4,7 @@ part 'api_response.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class ApiResponse<T> {
-  late T? data;
+  T? data;
 
   ApiResponse({this.data});
 

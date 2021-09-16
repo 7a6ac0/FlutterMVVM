@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_mvvm/data/base/base_dio.dart';
-import 'package:flutter_mvvm/data/home/model/product.dart';
+import 'package:flutter_mvvm/data/product/model/product.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_client.g.dart';
