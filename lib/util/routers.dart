@@ -9,7 +9,7 @@ class Routers {
       case '/':
         return MaterialPageRoute(builder: (_) => ProductScreen());
       case '/product_detail':
-        var product = settings.arguments as Product;
+        var product = settings.arguments as Product?;
         return MaterialPageRoute(builder: (_) => ProductDetailScreen(product: product)); 
       default:
         return MaterialPageRoute(builder: (_) {

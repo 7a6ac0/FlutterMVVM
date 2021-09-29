@@ -3,9 +3,9 @@ import 'package:flutter_mvvm/data/product/model/product.dart';
 import 'package:flutter_mvvm/util/image_helper.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  final Product product;
+  final Product? product;
 
-  ProductDetailScreen({Key? key, required this.product}) : super(key: key);
+  ProductDetailScreen({Key? key, this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +29,14 @@ class ProductDetailScreen extends StatelessWidget {
               constraints: BoxConstraints(
                 maxHeight: MediaQuery.of(context).size.height * 0.75,
               ),
-              child: imageLoader(product.image ?? "", fit: BoxFit.fill),
+              child: imageLoader(product?.image ?? "", fit: BoxFit.fill),
             ),
             SizedBox(height: 12),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 22),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text(product.title ?? "", style: TextStyle(fontSize: 16)),
+                child: Text(product?.title ?? "", style: TextStyle(fontSize: 16)),
               ),
             ),
             SizedBox(height: 12),
@@ -44,7 +44,7 @@ class ProductDetailScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 22),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text(product.description ?? "", style: TextStyle(fontSize: 12)),
+                child: Text(product?.description ?? "", style: TextStyle(fontSize: 12)),
               ),
             ),
             SizedBox(height: 12),
@@ -52,7 +52,7 @@ class ProductDetailScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 22),
               child: Align(
                 alignment: Alignment.centerRight,
-                child: Text("\$ ${product.price ?? 0.0}", style: TextStyle(fontSize: 14)),
+                child: Text("\$ ${product?.price ?? 0.0}", style: TextStyle(fontSize: 14)),
               ),
             ),
           ],
