@@ -9,11 +9,10 @@ part of 'api_response.dart';
 ApiResponse<T> _$ApiResponseFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
-) {
-  return ApiResponse<T>(
-    data: _$nullableGenericFromJson(json['data'], fromJsonT),
-  );
-}
+) =>
+    ApiResponse<T>(
+      data: _$nullableGenericFromJson(json['data'], fromJsonT),
+    );
 
 Map<String, dynamic> _$ApiResponseToJson<T>(
   ApiResponse<T> instance,
