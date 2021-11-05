@@ -13,5 +13,5 @@ abstract class ApiClient {
   }
 
   @GET("/products")
-  Future<List<Product>> getProducts();
+  Future<List<Product>?> getProducts();
 }

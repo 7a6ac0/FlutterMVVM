@@ -18,7 +18,7 @@ class ProductViewModel extends ChangeNotifier {
     _setProductUseCase(Response.loading<List<Product>>());
     try {
       var response = await _productRepository.getProducts();
-      _setProductUseCase(Response.success<List<Product>>(response));
+      _setProductUseCase(Response.success<List<Product>>(response ?? []));
     } catch (exception) {
       _setProductUseCase(Response.error<List<Product>>(exception.toString()));
     }

@@ -40,18 +40,14 @@ class _ProductScreenState extends State<ProductScreen> {
             case ResponseState.LOADING:
               return LoadingScreen();
             case ResponseState.SUCCESS:
-              if (viewModel.productsUseCase.data == null) {
-                result = Container();
-              } else {
-                result = ListView(
-                  children: viewModel.productsUseCase.data!.map((item) => ProductItem(
-                    product: item,
-                  )).toList(),
-                );
-              }
+              result = ListView(
+                children: viewModel.productsUseCase.data!.map((item) => ProductItem(
+                  product: item,
+                )).toList(),
+              );
               break;
             case ResponseState.ERROR:
-              return ErrorScreen(message: viewModel.productsUseCase.exception,);
+              return ErrorScreen(message: viewModel.productsUseCase.exception ?? "",);
           }
 
           return result;

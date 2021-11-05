@@ -16,7 +16,7 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<List<Product>> getProducts() async {
+  Future<List<Product>?> getProducts() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -27,8 +27,8 @@ class _ApiClient implements ApiClient {
                 .compose(_dio.options, '/products',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    var value = _result.data!
-        .map((dynamic i) => Product.fromJson(i as Map<String, dynamic>))
+    var value = _result.data
+        ?.map((dynamic i) => Product.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

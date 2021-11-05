@@ -15,11 +15,11 @@ class Response<T> {
     return Response(state: ResponseState.LOADING);
   }
 
-  static Response<T> success<T>(T data) {
+  static Response<T> success<T>(T? data) {
     return Response(state: ResponseState.SUCCESS, data: data);
   }
 
-  static Response<T> error<T>(String exception) {
+  static Response<T> error<T>(String? exception) {
     return Response(state: ResponseState.ERROR, exception: exception);
   }
 }
